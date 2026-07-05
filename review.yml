@@ -1,0 +1,94 @@
+aid: phreesia
+name: Phreesia
+review:
+  question: Does Phreesia expose a documented public WebSocket API?
+  answer: false
+  date: '2026-07-05'
+  reviewer: API Evangelist
+  asyncapiSpecCreated: false
+  asyncapiScopeNote: |
+    No AsyncAPI document was authored. Phreesia does not publish any public API
+    surface at all - there is no documented developer portal, REST reference, or
+    WebSocket/SSE endpoint to model. Phreesia's integrations are delivered by a
+    dedicated interoperability team over healthcare messaging standards (HL7v2,
+    FHIR, CCD, CSV, and X12 eligibility) plus proprietary APIs and data extracts,
+    all arranged privately as part of an enterprise engagement. There is no
+    server-push, bidirectional WebSocket transport on any public Phreesia API to
+    describe.
+findings:
+  summary: |
+    Phreesia does not publish a documented public WebSocket API. In fact,
+    Phreesia does not publish a public, self-serve developer API of any kind.
+    Phreesia is an enterprise patient intake, registration, scheduling,
+    payments, and engagement platform for healthcare organizations. Its
+    integration capabilities are real and substantial, but they are delivered
+    through a dedicated integration team using open healthcare standards
+    (HL7v2, FHIR, CCD, CSV) and proprietary APIs, bidirectionally connected to
+    EHR/EMR, PM, HIE, and data-warehouse systems. No public developer portal,
+    API reference, OpenAPI, base URL, key registration, or WebSocket (ws:// or
+    wss://) endpoint is documented anywhere as of the review date. Pricing is
+    not published (contact-sales / custom, enterprise-tailored).
+  accessModel: |
+    Partner/enterprise-gated. Access to Phreesia APIs and integrations is
+    arranged with Phreesia's sales and interoperability teams as part of a
+    platform deployment - not through public sign-up. The API entries in
+    apis.yml are modeled from Phreesia's published product and integration
+    capabilities and are flagged endpointsModeled: true; no endpoint paths or
+    base URLs were fabricated.
+  openSource: |
+    Not open source. Phreesia is a publicly traded commercial healthcare
+    technology company (founded 2005). The core platform is proprietary. It is
+    an HL7 Organizational Member and publishes an approved open-source software
+    inventory for components it consumes, but exposes no open API product.
+  transports:
+    - protocol: HL7v2
+      documented: false
+      note: Bidirectional HL7v2 interfaces (ADT, SIU, DFT, etc.) delivered by Phreesia's integration team; not publicly documented.
+    - protocol: FHIR
+      documented: false
+      note: FHIR resource exchange (Patient, Coverage, Appointment, QuestionnaireResponse, DocumentReference, etc.); private/partner-arranged, no public reference.
+    - protocol: X12
+      documented: false
+      note: X12 270/271 real-time insurance eligibility verification; not a public API surface.
+    - protocol: REST
+      documented: false
+      note: Proprietary/embedded APIs are referenced in marketing (embedded check-in APIs) but no public REST reference, base URL, or schema is published.
+    - protocol: WebSocket
+      scheme: wss
+      documented: false
+      note: No WebSocket endpoint is documented anywhere on any public Phreesia API as of the review date.
+  endpointsConfirmedRest: []
+  endpointsModeled: true
+sources:
+  - url: https://www.phreesia.com/
+    type: Website
+    note: Company homepage - patient intake platform, request-a-demo, no developer portal linked.
+  - url: https://www.phreesia.com/products/integrations/
+    type: Documentation
+    note: Integration capabilities - HL7v2, FHIR, CCD, CSV, proprietary APIs, data extracts; delivered by a dedicated team; contact-us for other systems. No API reference.
+  - url: https://www.phreesia.com/products/patient-engagement/
+    type: Documentation
+    note: Digital intake and consent forms, mobile intake in 20+ languages, logic-driven interviews, real-time insurance verification.
+  - url: https://www.phreesia.com/solutions/health-systems/
+    type: Documentation
+    note: Intake, access, and RCM for health systems; embedded APIs cited for contactless check-in at scale.
+  - url: https://www.phreesia.com/pricing/
+    type: Plans
+    note: Pricing page - request a quote; no published pricing (contact-sales / custom).
+  - url: https://code.cerner.com/apps/phreesia
+    type: Documentation
+    note: Phreesia listed in the Oracle Health (Cerner) developer program as an integrating app - reinforces partner-integration model rather than a public Phreesia API.
+  - url: https://en.wikipedia.org/wiki/Phreesia
+    type: Reference
+    note: Company background - founded 2005, publicly traded, ~150M+ patient visits annually.
+actions:
+  asyncapiPath: null
+  apisYmlUpdated: true
+  reason: |
+    No WebSocket protocol surface exists, and Phreesia publishes no public API
+    reference of any kind. The apis.yml entry documents Phreesia honestly as a
+    partner/enterprise-gated healthcare platform, with modeled logical APIs
+    (flagged endpointsModeled: true) mapped to the healthcare standards they are
+    delivered over. No AsyncAPI, OpenAPI, plans, rate-limits, or finops
+    artifacts were created because no public reference material exists to source
+    them from.

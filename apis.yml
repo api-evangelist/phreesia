@@ -1,0 +1,134 @@
+aid: phreesia
+url: https://raw.githubusercontent.com/api-evangelist/phreesia/refs/heads/main/apis.yml
+name: Phreesia
+kind: company
+description: Phreesia is a patient intake, registration, scheduling, payments, and
+  engagement platform for healthcare organizations, powering more than 150 million
+  patient visits annually. It delivers digital check-in, mobile intake and consent
+  forms in 20+ languages, logic-driven patient interviews, real-time insurance
+  eligibility verification, and patient payments, and pushes the resulting data
+  back into the provider's systems of record. Phreesia is not a self-serve public
+  API product - it is an enterprise platform whose integrations are delivered by a
+  dedicated interoperability team using open healthcare standards (HL7v2, FHIR, CCD,
+  CSV) alongside proprietary APIs and data extracts, with bidirectional interfaces
+  into EHR/EMR, PM, HIE, data warehouse, and data lake systems (Epic, athenahealth,
+  eClinicalWorks, NextGen, Oracle Health/Cerner, Veradigm, Meditech, ModMed, and
+  more). There is no publicly documented developer portal, API reference, or
+  self-service key registration as of this writing; the API surface below is modeled
+  from Phreesia's published product and integration capabilities, not from public
+  reference documentation.
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+tags:
+- Healthcare
+- Patient Intake
+- Patient Registration
+- Patient Engagement
+- Scheduling
+- Payments
+- Insurance Eligibility
+- HL7
+- FHIR
+- Interoperability
+- EHR Integration
+- Partner API
+created: '2026-07-05'
+modified: '2026-07-05'
+specificationVersion: '0.19'
+apis:
+- aid: phreesia:phreesia-intake-forms-api
+  name: Phreesia Intake & Forms API
+  tags:
+  - Intake
+  - Forms
+  - Consent
+  - FHIR
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://www.phreesia.com/products/patient-engagement/
+  endpointsModeled: true
+  properties:
+  - url: https://www.phreesia.com/products/integrations/
+    type: Documentation
+  description: Digital intake, consent, and clinical questionnaire capture - logic-driven
+    interviews customized per patient and delivered as mobile intake in 20+ languages.
+    Completed intake, consent, and patient-reported outcome data flow into the EHR
+    via HL7v2, FHIR (e.g. QuestionnaireResponse / DocumentReference), CCD, or CSV.
+    Endpoints are modeled from published product capability, not public reference docs.
+- aid: phreesia:phreesia-registration-demographics-api
+  name: Phreesia Registration & Demographics API
+  tags:
+  - Registration
+  - Demographics
+  - Patients
+  - FHIR
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://www.phreesia.com/solutions/health-systems/
+  endpointsModeled: true
+  properties:
+  - url: https://www.phreesia.com/products/integrations/
+    type: Documentation
+  description: Bidirectional patient registration and demographic data exchange -
+    verify and update patient identity, contact, and demographic fields and write
+    them back to the EHR/PM system of record. Modeled on HL7v2 ADT and FHIR
+    Patient/Coverage resource flows; not a documented public REST surface.
+- aid: phreesia:phreesia-scheduling-appointments-api
+  name: Phreesia Scheduling & Appointments API
+  tags:
+  - Scheduling
+  - Appointments
+  - Check-in
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://www.phreesia.com/solutions/health-systems/
+  endpointsModeled: true
+  properties:
+  - url: https://www.phreesia.com/products/integrations/
+    type: Documentation
+  description: Appointment scheduling, reminders, and contactless mobile/kiosk check-in,
+    driving arrival status back into the practice management system. Modeled on
+    HL7v2 SIU and FHIR Appointment/Schedule/Slot flows; endpoints are illustrative.
+- aid: phreesia:phreesia-eligibility-verification-api
+  name: Phreesia Insurance Eligibility Verification API
+  tags:
+  - Eligibility
+  - Insurance
+  - Verification
+  - Coverage
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://www.phreesia.com/products/integrations/
+  endpointsModeled: true
+  properties:
+  - url: https://www.phreesia.com/products/integrations/
+    type: Documentation
+  description: Real-time insurance eligibility and benefits verification at or before
+    check-in, returning coverage, copay, and patient-responsibility estimates.
+    Modeled on X12 270/271 eligibility and FHIR Coverage/CoverageEligibilityResponse
+    flows; no public reference documentation is published.
+- aid: phreesia:phreesia-payments-api
+  name: Phreesia Payments API
+  tags:
+  - Payments
+  - Collections
+  - Billing
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://www.phreesia.com/pricing/
+  endpointsModeled: true
+  properties:
+  - url: https://www.phreesia.com/products/integrations/
+    type: Documentation
+  description: Patient payments, card-on-file, copay collection, and payment plans,
+    with real-time payment posting back to the PM/billing system. Endpoints are
+    modeled from published product capability; Phreesia does not publish a public
+    payments API reference.
+common:
+- type: LinkedIn
+  url: https://www.linkedin.com/company/phreesia
+- type: Website
+  url: https://www.phreesia.com/
+- type: Documentation
+  url: https://www.phreesia.com/products/integrations/
+- type: Plans
+  url: https://www.phreesia.com/pricing/
+- type: Company
+  url: https://www.phreesia.com/company/about-us/
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com
