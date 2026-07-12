@@ -1,0 +1,13 @@
+generated: '2026-07-11'
+method: searched
+probe: true
+source: https://www.phreesia.com/products/security/
+url: https://www.phreesia.com/products/security/
+certifications:
+- SOC 2
+- PCI DSS
+evidence:
+- source: https://www.phreesia.com/products/security/
+  keywords:
+  - soc 2
+  - pci-dss

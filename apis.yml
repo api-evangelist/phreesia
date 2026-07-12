@@ -119,6 +119,10 @@ apis:
     modeled from published product capability; Phreesia does not publish a public
     payments API reference.
 common:
+- type: TrustCenter
+  url: security/phreesia-trust-center.yml
+- type: DomainSecurity
+  url: security/phreesia-domain-security.yml
 - type: LinkedIn
   url: https://www.linkedin.com/company/phreesia
 - type: Website
