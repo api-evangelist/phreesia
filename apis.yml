@@ -17,6 +17,17 @@ description: Phreesia is a patient intake, registration, scheduling, payments, a
   self-service key registration as of this writing; the API surface below is modeled
   from Phreesia's published product and integration capabilities, not from public
   reference documentation.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: unknown
   onboarding: unknown
