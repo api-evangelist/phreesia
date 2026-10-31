@@ -1,4 +1,4 @@
-# Phreesia (phreesia)
+# Phreesia
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,80 +64,90 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Phreesia is a patient intake, registration, scheduling, payments, and engagement platform for healthcare organizations, powering more than 150 million patient visits annually. It delivers digital check-in, mobile intake and consent forms in 20+ languages, logic-driven patient interviews, real-time insurance eligibility verification, and patient payments, and pushes the resulting data back into the provider's systems of record.
+Phreesia is a patient intake, registration, scheduling, payments, and engagement platform for healthcare organizations, powering more than 150 million patient visits annually. It delivers digital check-in, mobile intake and consent forms in 20+ languages, logic-driven patient interviews, real-time insurance eligibility verification, and patient payments, and pushes the resulting data back into the provider's systems of record. Phreesia is not a self-serve public API product - it is an enterprise platform whose integrations are delivered by a dedicated interoperability team using open healthcare standards (HL7v2, FHIR, CCD, CSV) alongside proprietary APIs and data extracts, with bidirectional interfaces into EHR/EMR, PM, HIE, data warehouse, and data lake systems (Epic, athenahealth, eClinicalWorks, NextGen, Oracle Health/Cerner, Veradigm, Meditech, ModMed, and more). There is no publicly documented developer portal, API reference, or self-service key registration as of this writing; the API surface below is modeled from Phreesia's published product and integration capabilities, not from public reference documentation.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/phreesia/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/phreesia/refs/heads/main/apis.yml)
+**Areas:** Healthcare · Patient Intake · Patient Registration · Patient Engagement · Scheduling · Payments · Insurance Eligibility · HL7 · FHIR · Interoperability · EHR Integration · Partner API
 
-## Access Model — Please Read
+## Phreesia on APIs.io
 
-Phreesia is **not a self-serve public API product.** It is an enterprise healthcare platform whose integrations are delivered by a dedicated interoperability team. Phreesia is an HL7 Organizational Member and integrates using open healthcare standards — **HL7v2, FHIR, CCD, and CSV** — alongside proprietary APIs and data extracts, providing bidirectional interfaces into EHR/EMR, practice management (PM), HIE, data warehouse, and data lake systems (Epic, athenahealth, eClinicalWorks, NextGen, Oracle Health/Cerner, Veradigm, Meditech, ModMed, Greenway, AdvancedMD, and more).
+Everything profiled for Phreesia is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/phreesia/](https://apis.io/providers/phreesia/)** — or go straight to one of the APIs or properties below.
 
-As of this writing there is **no publicly documented developer portal, API reference, self-service key registration, or published OpenAPI** for Phreesia. Access is arranged through Phreesia's sales and integration teams as part of a platform engagement. Pricing is not published — it is custom/contact-sales (third-party sources suggest entry plans starting around a few hundred dollars per month, escalating with locations and add-on features).
+### APIs (5)
 
-Because there is no public reference surface, the APIs listed below are **modeled** from Phreesia's published product and integration capabilities. Each carries `endpointsModeled: true` in `apis.yml`. They represent logical capability areas and the standards (HL7v2, FHIR, X12) those capabilities are typically delivered over — they are **not** transcribed from a public Phreesia API reference, and no endpoint paths or base URLs have been fabricated.
+- [Phreesia Intake & Forms API](https://apis.io/apis/phreesia/phreesia-intake-forms-api/) — Digital intake, consent, and clinical questionnaire capture - logic-driven interviews customized per patient and delivered as mobile intake in 20+…
+- [Phreesia Registration & Demographics API](https://apis.io/apis/phreesia/phreesia-registration-demographics-api/) — Bidirectional patient registration and demographic data exchange - verify and update patient identity, contact, and demographic fields and write them back…
+- [Phreesia Scheduling & Appointments API](https://apis.io/apis/phreesia/phreesia-scheduling-appointments-api/) — Appointment scheduling, reminders, and contactless mobile/kiosk check-in, driving arrival status back into the practice management system. Modeled on HL7v2…
+- [Phreesia Insurance Eligibility Verification API](https://apis.io/apis/phreesia/phreesia-eligibility-verification-api/) — Real-time insurance eligibility and benefits verification at or before check-in, returning coverage, copay, and patient-responsibility estimates. Modeled on…
+- [Phreesia Payments API](https://apis.io/apis/phreesia/phreesia-payments-api/) — Patient payments, card-on-file, copay collection, and payment plans, with real-time payment posting back to the PM/billing system. Endpoints are modeled…
 
-## Tags
+### Published properties
 
-- Healthcare
-- Patient Intake
-- Patient Registration
-- Patient Engagement
-- Scheduling
-- Payments
-- Insurance Eligibility
-- HL7
-- FHIR
-- Interoperability
-- EHR Integration
-- Partner API
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## Timestamps
+#### Security (2)
 
-- **Created:** 2026-07-05
-- **Modified:** 2026-07-05
+Authentication, trust centre, and vulnerability disclosure.
 
-## APIs (Modeled)
+- [Phreesia Domain Security](https://apis.io/security/phreesia/phreesia-domain-security/)
+- [Phreesia Trust Center](https://apis.io/security/phreesia/phreesia-trust-center/)
 
-### Phreesia Intake & Forms API
+## Where to find this API
 
-Digital intake, consent, and clinical questionnaire capture — logic-driven interviews customized per patient and delivered as mobile intake in 20+ languages. Completed intake, consent, and patient-reported outcome data flow into the EHR via HL7v2, FHIR (e.g. `QuestionnaireResponse` / `DocumentReference`), CCD, or CSV.
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
-- **Human URL:** [https://www.phreesia.com/products/patient-engagement/](https://www.phreesia.com/products/patient-engagement/)
-- **Endpoints:** Modeled from published product capability (not public reference docs)
-
-### Phreesia Registration & Demographics API
-
-Bidirectional patient registration and demographic data exchange — verify and update patient identity, contact, and demographic fields and write them back to the EHR/PM system of record. Modeled on HL7v2 ADT and FHIR `Patient`/`Coverage` resource flows.
-
-- **Human URL:** [https://www.phreesia.com/solutions/health-systems/](https://www.phreesia.com/solutions/health-systems/)
-
-### Phreesia Scheduling & Appointments API
-
-Appointment scheduling, reminders, and contactless mobile/kiosk check-in, driving arrival status back into the practice management system. Modeled on HL7v2 SIU and FHIR `Appointment`/`Schedule`/`Slot` flows.
-
-- **Human URL:** [https://www.phreesia.com/solutions/health-systems/](https://www.phreesia.com/solutions/health-systems/)
-
-### Phreesia Insurance Eligibility Verification API
-
-Real-time insurance eligibility and benefits verification at or before check-in, returning coverage, copay, and patient-responsibility estimates. Modeled on X12 270/271 eligibility and FHIR `Coverage`/`CoverageEligibilityResponse` flows.
-
-- **Human URL:** [https://www.phreesia.com/products/integrations/](https://www.phreesia.com/products/integrations/)
-
-### Phreesia Payments API
-
-Patient payments, card-on-file, copay collection, and payment plans, with real-time payment posting back to the PM/billing system.
-
-- **Human URL:** [https://www.phreesia.com/pricing/](https://www.phreesia.com/pricing/)
-
-## Common Properties
-
-- [LinkedIn](https://www.linkedin.com/company/phreesia)
 - [Website](https://www.phreesia.com/)
-- [Documentation / Integrations](https://www.phreesia.com/products/integrations/)
-- [Plans / Pricing](https://www.phreesia.com/pricing/)
-- [Company](https://www.phreesia.com/company/about-us/)
+- [Documentation](https://www.phreesia.com/products/integrations/)
+- [Blog](https://www.phreesia.com/articles/)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 9.7** — minimal · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 62.5 |
+| Contract quality | 0.0 |
+| Contract governance | 0.0 |
+| Operational transparency | 0.0 |
+| Developer ergonomics | 11.9 |
+| Access clarity | 7.9 |
+
+**Agent readiness 0.0** — human-only
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 8.6** — Health
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/phreesia/](https://apis.io/providers/phreesia/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Phreesia: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/phreesia/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
